@@ -1,0 +1,18 @@
+CREATE TABLE_BUDGET (
+    department TEXT NOT NULL,
+    budget_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    category TEXT,
+    fiscal_year INTEGER,
+    fiscal_month INTEGER,
+    budgeted_amount DECIMAL,
+    UNIQUE(department, fiscal_year, fiscal_month, category) NOT NULL
+);
+
+CREATE TABLE expenses (
+    expense_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    transaction_data DATE NOT NULL,
+    department TEXT NOT NULL,
+    category TEXT NOT NULL,
+    amount DECIMAL,
+    description TEXT
+);
